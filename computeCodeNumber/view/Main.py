@@ -2,7 +2,7 @@
 
 import tkinter as tk
 
-from computeCodeNumber import ComputeCodeNumber
+# from computeCodeNumber import ComputeCodeNumber
 
 
 class MainWindow():
