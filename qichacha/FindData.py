@@ -10,27 +10,6 @@ class FindData():
         pass
 
     def find_a_data(self, name):
-
-        # 代理服务器
-        proxyHost = "http-dyn.abuyun.com"
-        proxyPort = "9020"
-
-        # 代理隧道验证信息
-        proxyUser = "HF4RK2AE25YK2LXD"
-        proxyPass = "2BE5A05D2A07E056"
-
-        proxyMeta = "http://%(user)s:%(pass)s@%(host)s:%(port)s" % {
-            "host": proxyHost,
-            "port": proxyPort,
-            "user": proxyUser,
-            "pass": proxyPass,
-        }
-
-        proxies = {
-            "http": proxyMeta,
-            "https": proxyMeta,
-        }
-
         headers = {
             'Host': 'www.qichacha.com',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

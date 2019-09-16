@@ -14,12 +14,11 @@ class ReadExcel():
         wb = openpyxl.load_workbook(filename=filename)
         sheet1 = wb.get_sheet_by_name('Sheet1')
         col_name = sheet1['B']
-        sheet1['D3'] = 666
         for i in range(2, len(col_name)):
             print('企业编号：', i)
             import time
             import random
-            time.sleep(random.randint(7, 10))
+            time.sleep(random.randint(5, 10))
             try:
                 find_result = self.find_data.find_a_data(col_name[i].value)
             except:
