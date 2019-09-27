@@ -15,9 +15,9 @@ class ReadExcel():
         wb = openpyxl.load_workbook(filename=filename)
         sheet1 = wb.get_sheet_by_name('Sheet1')
         col_name = sheet1['A']
-        end_time = sheet1['F']
-        begin_time = sheet1['K']
-        for i in range(2, len(col_name)):
+        end_time = sheet1['D']
+        begin_time = sheet1['F']
+        for i in range(1, len(col_name)):
             name = col_name[i].value
             if name is None:
                 break
@@ -25,15 +25,23 @@ class ReadExcel():
             sub_end_time = str(end_time[i].value)
             print(name, sub_begin_time, sub_end_time)
 
-            if sub_begin_time =='None' or sub_end_time is '':
+            if sub_begin_time == 'None' or sub_end_time is '':
                 continue
             print(name, sub_begin_time, sub_end_time)
             print()
             begin = datetime.datetime.strptime(sub_begin_time, '%Y.%m')
             end = datetime.datetime.strptime(sub_end_time, '%Y%m')
             month = rrule.rrule(rrule.MONTHLY, dtstart=begin, until=end).count()
-            temp_var = 'L' + str(i + 1)
+            begin = begin.strftime('%Y-%m-%d')
+            temp_var = 'G' + str(i + 1)
+            if month == 24:
+                month = 2
+            if month == 12:
+                month = 1
+
             sheet1[temp_var] = month
+            temp_var = 'F' + str(i + 1)
+            sheet1[temp_var] = begin
         wb.save('result.xlsx')
 
 
