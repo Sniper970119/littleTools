@@ -13,3 +13,12 @@ mongoDB的数据迁移（尽管mongo提供了这个方法，但是只有双方�
 在cancelPayment文件下有对云代账合同以及收款业务的自动化添加与删除。
 根下有一个记录点击位置的框架，目前暂停开发。
 
+*printImage*  
+图片绘制，根据（左上点x，左上点y，长，宽）为数据规约，在原图上绘制矩形框。  
+根据  
+
+![avatar](./printImage/show/target.jpg)
+
+画出   
+
+![avatar](./printImage/show/result.jpg)
